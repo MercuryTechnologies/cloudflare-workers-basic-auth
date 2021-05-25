@@ -1,6 +1,7 @@
 const NAME = "super"
 const PASS = "secret"
 
+
 /**
  * RegExp for basic auth credentials
  *
@@ -63,7 +64,8 @@ const unauthorizedResponse = function(body) {
     body, {
       status: 401,
       headers: {
-        "WWW-Authenticate": 'Basic realm="User Visible Realm"'
+        "WWW-Authenticate": 'Basic realm="CF worker script"',
+        "Cache-Control": "private, no-cache, no-store, must-revalidate"
       }
     }
   )
